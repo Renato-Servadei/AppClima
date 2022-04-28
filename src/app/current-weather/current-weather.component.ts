@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrentWeatherService } from '../Services/current-weather.service';
 
 @Component({
   selector: 'app-current-weather',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentWeatherComponent implements OnInit {
 
-  constructor() { }
+  constructor(public weatherService : CurrentWeatherService) { }
 
   ngOnInit(): void {
   }

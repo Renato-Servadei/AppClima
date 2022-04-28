@@ -1,1 +1,14 @@
-<p>current-weather works!</p>
+<div class="card" *ngIf="weatherService.$weather | async as weather">
+    <div class="icon">
+        <app-weather-icons [code]="weather.cod"></app-weather-icons>
+    </div>
+    <div class="temp">
+        <p>Temperatura</p>
+        <p class="tempValue">{{weather.temp}}</p>
+    </div>
+    <div class="description">
+        <h2>{{weather.name}}</h2>
+        <p>{{weather.main}}</p>
+    </div>
+
+</div>
