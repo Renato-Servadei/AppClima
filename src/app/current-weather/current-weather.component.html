@@ -1,4 +1,4 @@
-<div class="card" *ngIf="weatherService.$weather | async as weather">
+<div class="card" *ngIf="weatherService.weather$ | async as weather">
     <div class="icon">
         <app-weather-icons [code]="weather.cod"></app-weather-icons>
     </div>
