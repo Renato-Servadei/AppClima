@@ -7,6 +7,8 @@ import { CurrentWeatherComponent } from './current-weather/current-weather.compo
 import { WeatherIconsComponent } from './weather-icons/weather-icons.component';
 import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { ForecastComponent } from './forecast/forecast.component';
+import { LoadingComponent } from './loading/loading.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -14,12 +16,14 @@ import { ForecastComponent } from './forecast/forecast.component';
     CurrentWeatherComponent,
     WeatherIconsComponent,
     WeatherCardComponent,
-    ForecastComponent
+    ForecastComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
