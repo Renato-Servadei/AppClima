@@ -1,1 +1,23 @@
-<p>weather-card works!</p>
+<div class="card" *ngIf="weather">
+    <div class="icon">
+        <app-weather-icons [code]="weather.cod"></app-weather-icons>
+    </div>
+    <!-- este ngIF lo voy a sacar cuando mande el min y max a la derecha y uno encima del otro-->
+    <div class="temp" *ngIf="weather.temp">
+        <p>Temperatura</p>
+        <p class="tempValue">{{weather.temp}}</p>
+    </div>
+    <div class="low-temp" *ngIf="weather.minMaxTemp">
+        {{weather.minMaxTemp.min}}°
+        <span>Mínima</span>
+    </div>
+    <div class="high-temp" *ngIf="weather.minMaxTemp">
+        {{weather.minMaxTemp.max}}°
+        <span>Máxima</span>
+    </div>
+    <div class="description">
+        <h2>{{weather.name}}</h2>
+        <p>{{weather.main}}</p>
+    </div>
+
+</div>

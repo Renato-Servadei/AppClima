@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Weather } from 'src/structures/weather.structure';
 
 @Component({
   selector: 'app-weather-card',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherCardComponent implements OnInit {
 
+  @Input() weather! : Weather;
   constructor() { }
 
   ngOnInit(): void {

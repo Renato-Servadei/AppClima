@@ -1,6 +1,6 @@
 export interface Weather {
     name?: string;
-    cod?: number;
+    cod: number;
     icon?: string;
     description?: string;
     temp?: number;
