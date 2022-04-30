@@ -1,6 +1,7 @@
 import { animation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { loadingAnimation } from '../animations/loading-animations';
+import { CurrentWeatherService } from '../Services/current-weather.service';
 
 @Component({
   selector: 'app-loading',
@@ -13,7 +14,7 @@ export class LoadingComponent implements OnInit {
   _elements: string [] = ['#ffe5ec', '#ff80a0', '#ff2e63', '#800020', '#1a0006'];
   elements: string [] = this._elements;
   
-  constructor() { }
+  constructor(public currentWeatherService : CurrentWeatherService) { }
 
   ngOnInit(): void {
     this.set();

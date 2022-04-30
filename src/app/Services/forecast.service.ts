@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Coords } from 'src/structures/coords.structure';
 import { map } from 'rxjs/operators';
 import { Weather } from 'src/structures/weather.structure';
+import { GeolocationService } from './geolocation.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,15 @@ export class ForecastService {
   endpoint: string = 'https://api.openweathermap.org/data/2.5/forecast'
 
 
-  constructor(private http : HttpClient) { 
+  constructor(private http : HttpClient, private geolocationService: GeolocationService) { 
+    
     this.weather$ = this.weatherSubject.asObservable().pipe(map(this.structureData));
-    this.get({lat: -34.5453018, lon: -58.4519636
-    });
+
+    this.geolocationService.coords$.subscribe((coords)=> {
+      this.get(coords);
+    })
+
+    
   }
 
   structureData(data : any) {
